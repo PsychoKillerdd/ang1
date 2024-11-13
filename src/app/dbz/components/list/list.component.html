@@ -1,0 +1,22 @@
+<h4>Personajes</h4>
+<ul class="list-group">
+<li *ngFor="let character of charactersList;let i = index;let isFirst = first;let isLast = last,let isEven = even;let isOdd = odd"
+ class="list-group-item d-flex justify-content-between align-items-center" [ngClass]="{
+    'list-group-item-dark':isLast,
+    'list-group-item-warning':isEven
+
+ }">
+ <div>
+    <span class="text-primary"> {{ i + 1}} </span>
+    <span>{{character.name}}</span>
+    <strong>Power: </strong>
+    <span>{{character.power}}</span>
+    <span>Si es el primero: {{isFirst}}</span>
+    <span> si es el ultimo: {{isLast}}</span>
+</div>
+   <button (click)="onDelateCharacter(i)" class="btn btn-danger">x</button>
+
+</li>
+
+
+</ul>
