@@ -14,14 +14,16 @@ export class ListComponent {
     name:'Trunk',
     power:10
   }]
-  
-  
+
+
   @Output()
-  public onDelete:EventEmitter<number> = new EventEmitter();
- 
-  
-  onDelateCharacter(index:number):void{
-    this.onDelete.emit(index);
+  public onDelete:EventEmitter<string> = new EventEmitter();
+
+
+  onDelateCharacter(id?:string):void{
+    if(!id) return;
+    console.log(id)
+    this.onDelete.emit(id);
   }
 
 }
